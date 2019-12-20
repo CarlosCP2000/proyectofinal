@@ -1,0 +1,31 @@
+@startuml
+
+class models.1People{
+name:string
+lastname:string
+school:string
+faculty:string
+}
+
+class models.2Elector{
+    number_list:string
+}
+
+class models.3Candidate{
+number_list:string
+position:string
+number_votes:string
+percentage_votes:string
+}
+
+class models.4Vote{
+date:date
+hour:string
+}
+
+models.1People <|-- models.2Elector
+models.1People <|-- models.3Candidate
+models.2Elector "*" --* "1" models.4Vote
+models.3Candidate "*" --* "1" models.4Vote
+
+@enduml
